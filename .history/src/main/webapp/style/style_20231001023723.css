@@ -1,0 +1,30 @@
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+  display: flex;
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+main img{
+  width: 343px;
+  height: 298px;
+}
+
+.container-login{
+  width: 474px;
+  height: 477px;
+  border:  1px solid #BFB7B7;
+  border-radius: 15px;
+}
