@@ -1,6 +1,7 @@
 br\com\entidade\TestaCon.class
 br\com\entidade\ManterUsuario.class
 br\com\controle\Categoria.class
+br\com\bean\ServletLogin.class
 br\com\bean\ServletUsuario.class
 br\com\controle\Usuario.class
 br\com\entidade\DAO.class

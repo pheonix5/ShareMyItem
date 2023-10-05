@@ -6,6 +6,7 @@ package br.com.entidade;
 
 import br.com.controle.Usuario;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  *
@@ -30,4 +31,26 @@ public class ManterUsuario extends DAO {
             System.out.println("Erro ao inserir: " + e.getMessage());
         }
     }
+
+    public Usuario logar(String email, String senha) throws Exception {
+
+        String sql = "SELECT * FROM usuario where email =?";
+        this.abrirBanco();
+        pst = con.prepareStatement(sql);
+        pst.setString(1, email);
+        ResultSet rs = (ResultSet) pst.executeQuery();
+        Usuario u = new Usuario();
+        if (rs.next()) {
+            if (senha.equals(rs.getString("senha"))) {
+                u.setUsuario_id(rs.getInt("usuario_id"));
+                u.setNome(rs.getString("nome"));
+                u.setCpf(rs.getString("cpf"));
+                u.setTelefone(rs.getString("telefone"));
+                u.setEmail(rs.getString("email"));
+            }
+        }
+        this.fecharBanco();
+        return u;
+    }
+
 }
