@@ -13,22 +13,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
   box-sizing: border-box;
 }
 
-html{
-  height: 100%;
+
+body {
+    display: flex;
+    margin: 0;
 }
 
-body{
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.sidebar{
-  display: flex;
-  width: 320px;
-  background-color: #002C6F;
-  height: 100%;
+.menu {
+    width: 200px;
+    background-color: #333;
+    height: 100%;
+    position: fixed;
 }
 
-.sidebar img{
-  width: 313px;
-  height: 284px;
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #555;
 }
