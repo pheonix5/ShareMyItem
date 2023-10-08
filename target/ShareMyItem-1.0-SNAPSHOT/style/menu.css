@@ -1,0 +1,76 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 de out. de 2023, 19:48:16
+    Author     : lucas
+*/
+
+.menu {
+    width: 320px;
+    background-color: #002C6F;
+    height: 100%;
+    position: fixed;
+    
+}
+.menu a{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.menu li a {
+    padding: 16px;
+    text-decoration: none;
+    color: white;
+}
+.menu li div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white ;
+}
+.menu li div:hover {
+    background-color: #fff;
+    cursor: pointer;
+    color: #002C6F !important;
+    a{
+        color: #002C6F !important;
+    }
+}
+
+#anuncios-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#meus-anuncios-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#perfil-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#logout-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+
+#anuncios-li:hover a {
+    color: #002C6F;
+}
+#meus-anuncios-li:hover a {
+    color: #002C6F;
+}
+#perfil-li:hover a {
+    color: #002C6F;
+}
+#logout-li:hover a {
+    color: #002C6F;
+}

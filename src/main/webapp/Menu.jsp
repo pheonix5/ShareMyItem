@@ -1,37 +1,79 @@
 <%-- 
-    Document   : Home
-    Created on : 4 de out. de 2023, 20:37:36
+    Document   : Menu
+    Created on : 8 de out. de 2023, 19:45:34
     Author     : lucas
 --%>
-<%@page import="br.com.controle.Usuario"%>
+<%@page import="br.com.controle.Usuario" %>
 
-<%
-  Usuario ulogado = new Usuario();
-  
-   ulogado = (Usuario) session.getAttribute("usuario");
-%>    
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Título da Página</title>
-    <link rel="stylesheet" href="style/styleMenu.css">
+<% 
+    Usuario uLogado = new Usuario();
     
-</head>
-<body>
+    uLogado = (Usuario) session.getAttribute("usuario");
+    if(uLogado == null){
+       response.sendRedirect("Login.jsp");
+       return;
+    }
+%>
+
     <div class="menu">
+        <img src="image/logo2.png" />
         <ul>
-            <li><a href="teste1.jsp">Página 1</a></li>
-            <li><a href="teste2.jsp">Página 2</a></li>
+            <li class="li-menu" id="anuncios-li">
+                <div>
+                    <span class="material-symbols-outlined">
+                        newspaper
+                    </span>
+                    <a href="Home.jsp">
+                        <p>An�ncios</p>
+                    </a>
+                </div>
+            </li>
+            <script>
+                document.getElementById('anuncios-li').addEventListener('click', function () {
+                    window.location.href = 'Home.jsp';
+                });
+            </script>
+            <li class="li-menu" id="meus-anuncios-li">
+                <div>
+                    <span class="material-symbols-outlined">
+                        forms_add_on
+                    </span>
+                    <a href="MeusAnuncios.jsp">
+                        Meus An�ncios
+                    </a>
+                </div>
+            </li>
+            <script>
+                document.getElementById('meus-anuncios-li').addEventListener('click', function () {
+                    window.location.href = 'MeusAnuncios.jsp';
+                });
+            </script>
+            <li class="li-menu" id="perfil-li">
+                <div>
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                    <a href="Perfil.jsp">Perfil</a>
+                </div>
+            </li>
+            <script>
+                document.getElementById('perfil-li').addEventListener('click', function () {
+                    window.location.href = 'Perfil.jsp';
+                });
+            </script>
+            <li class="li-menu" id="logout-li">
+                <div>
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                    <a href="sair.jsp?usuario=usuario">Sair</a>
+                </div>
+            </li>
+            <script>
+                document.getElementById('logout-li').addEventListener('click', function () {
+                    window.location.href = 'sair.jsp?usuario=usuario';
+                });
+            </script>
         </ul>
     </div>
 
-    <div class="conteudo">
-        <!-- Conteúdo da página aqui -->
-    </div>
-    
-    <script src="script.js"></script>
-</body>
-</html>
