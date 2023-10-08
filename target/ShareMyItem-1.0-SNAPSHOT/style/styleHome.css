@@ -84,8 +84,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     margin-left: 0.5rem;
 
 }
-.menu li{
-    margin-left: 0.5rem;
+.menu li span{
+    margin-left: 1rem;
 }
 .menu li a {
     padding: 16px;
