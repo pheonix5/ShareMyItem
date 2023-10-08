@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Home
-    Created on : 5 de out. de 2023, 19:46:00
+    Document   : teste1
+    Created on : 4 de out. de 2023, 23:50:13
     Author     : Eliakim
 --%>
 
@@ -10,10 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="style/styleHome.css">
+                <link rel="stylesheet" href="style/styleHome.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
-    <body>
+     <body>
         <div class="div-geral">
             <div class="menu-lateral">
                 <div class="menu">
@@ -24,7 +24,7 @@
                                 <span class="material-symbols-outlined">
                                     newspaper
                                 </span>
-                                <a href="Home.jsp">Anúncios</a>
+                                <a href="Home.jsp"><p>Anúncios</p></a>
                             </div>
                         </li>
                         <script>
@@ -85,7 +85,7 @@
             <div class="body">
                 <div class="content">
                     <div class="header">
-                        <h1 class="h1">Anúncios</h1>
+                        <h1 class="h1">Meus Anúncios</h1>
                     </div>
                     <div class="painel">
                         <div class="anuncio">

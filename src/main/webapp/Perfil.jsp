@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Home
-    Created on : 5 de out. de 2023, 19:46:00
+    Document   : teste2
+    Created on : 4 de out. de 2023, 23:50:28
     Author     : Eliakim
 --%>
 
@@ -24,7 +24,7 @@
                                 <span class="material-symbols-outlined">
                                     newspaper
                                 </span>
-                                <a href="Home.jsp">Anúncios</a>
+                                <a href="Home.jsp"><p>Anúncios</p></a>
                             </div>
                         </li>
                         <script>
@@ -81,11 +81,10 @@
                 </div>
 
             </div>
-
             <div class="body">
                 <div class="content">
                     <div class="header">
-                        <h1 class="h1">Anúncios</h1>
+                        <h1 class="h1">Perfil</h1>
                     </div>
                     <div class="painel">
                         <div class="anuncio">
@@ -101,43 +100,6 @@
                                 </p>                            
                             </div>
                         </div>
-                        <div class="anuncio">
-                            <div class="content-anuncio">
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>                            
-                            </div>                    </div>
-                        <div class="anuncio">
-                            <div class="content-anuncio">
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>                            
-                            </div>                    </div>
-                        <div class="anuncio">
-                            <div class="content-anuncio">
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>
-                                <p>
-                                    Titulo XXXXXXXX
-                                </p>                            
-                            </div>                    </div>
-
                     </div>
                 </div>
             </div>
