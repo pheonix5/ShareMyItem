@@ -75,11 +75,6 @@
                         </script>
                     </ul>
                 </div>
-
-                <div class="conteudo">
-                    <!-- Conteúdo da página aqui -->
-                </div>
-
             </div>
 
             <div class="body">

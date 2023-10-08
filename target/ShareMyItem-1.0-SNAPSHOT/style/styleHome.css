@@ -69,7 +69,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     background-color: #002C6F;
     height: 100%;
     position: fixed;
-    
+
+}
+.menu-lateral{
 }
 .menu a{
     font-family: 'Roboto', sans-serif;
@@ -79,8 +81,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     list-style-type: none;
     padding: 0;
     margin-top: 3rem;
-}
+    margin-left: 0.5rem;
 
+}
+.menu li{
+    margin-left: 0.5rem;
+}
 .menu li a {
     padding: 16px;
     text-decoration: none;
