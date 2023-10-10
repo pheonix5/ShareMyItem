@@ -1,0 +1,142 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 5 de out. de 2023, 21:30:24
+    Author     : Eliakim
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+.div-geral{
+
+}
+.body{
+    margin: 0;
+    margin-left: 320px;
+    padding: 32px;
+    background-color: #e4e4e4;
+    min-height: calc(100vh - 65px);
+
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.h1{
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 0px;
+    color: #002C6F;
+}
+.painel{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    margin-top: 2rem;
+}
+.anuncio{
+    display: flex;
+    height: 150px;
+    width: 100%;
+    margin-bottom: 1.1rem;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.content-anuncio{
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    flex-direction: column;
+    justify-content: space-between
+}
+.content{
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    min-height: calc(100vh - 115px);
+    padding: 24px;
+}
+
+<<<<<<< HEAD
+=======
+.menu {
+    width: 320px;
+    background-color: #002C6F;
+    height: 100%;
+    position: fixed;
+
+}
+.menu-lateral{
+}
+.menu a{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 3rem;
+    margin-left: 0.5rem;
+
+}
+.menu li span{
+    margin-left: 1rem;
+}
+.menu li a {
+    padding: 16px;
+    text-decoration: none;
+    color: white;
+}
+.menu li div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white ;
+}
+.menu li div:hover {
+    background-color: #fff;
+    cursor: pointer;
+    color: #002C6F !important;
+    a{
+        color: #002C6F !important;
+    }
+}
+
+#anuncios-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#meus-anuncios-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#perfil-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+#logout-li:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+
+#anuncios-li:hover a {
+    color: #002C6F;
+}
+#meus-anuncios-li:hover a {
+    color: #002C6F;
+}
+#perfil-li:hover a {
+    color: #002C6F;
+}
+#logout-li:hover a {
+    color: #002C6F;
+}
+>>>>>>> d75d8458ccf02dfeee51712cd4bd9557ceaec50e
