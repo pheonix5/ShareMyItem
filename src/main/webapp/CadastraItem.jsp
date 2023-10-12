@@ -2,8 +2,11 @@
     Document   : CadastraItem
     Created on : 10 de out. de 2023, 16:35:51
     Author     : Eliakim
---%>
 
+--%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.com.controle.Categoria"%>
+<%@page import="br.com.entidade.ManterCategoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,7 +28,7 @@
                 </div>
                 <div class="painel">                    
                     <h2>Preencha os campos para anunciar o seu item</h2>
-                    <form action="" method="post" class="form">
+                    <form action="CadastrarItem.do" method="post" class="form">
 
                         <div class="content-input">
 
@@ -36,13 +39,23 @@
                             <label>
                                 <input type="text" placeholder="Descrição" name="descricao" required>
                             </label>
-                            <select class="categorias" name="opcoes" required>
+                            <select class="categorias" name="categoria_id" required>
                                 <option value="" disabled selected>Selecione uma categoria</option>
-                                <option value="opcao1">Opção 1</option>
-                                <option value="opcao2">Opção 2</option>
-                                <option value="opcao3">Opção 3</option>
-                                <option value="opcao4">Opção 4</option>
-                                <option value="opcao5">Opção 5</option>
+                                <%
+                                    ArrayList<Categoria> lista = new ArrayList<Categoria>();
+                                    try{
+                                        ManterCategoria mc = new ManterCategoria();
+                                        lista = mc.listar();
+                                    }catch(Exception e){
+                                    out.print("Erro: " + e);
+                                    }
+                                    
+                                    for (Categoria c: lista) {
+                                %>
+                                <option value=<%=c.getCategoria_id()%> > <%=c.getNome()%> </option>
+                                <%
+                                    }
+                                %>   
                             </select>
 
                         </div>

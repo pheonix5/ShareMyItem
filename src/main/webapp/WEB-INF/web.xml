@@ -12,6 +12,10 @@
         <servlet-name>ServletTeste</servlet-name>
         <servlet-class>br.com.bean.ServletTeste</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletItem</servlet-name>
+        <servlet-class>br.com.bean.ServletItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletUsuario</servlet-name>
         <url-pattern>/cadastrar.do</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ServletTeste</servlet-name>
         <url-pattern>/enviar.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletItem</servlet-name>
+        <url-pattern>/CadastrarItem.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,10 +1,12 @@
-br\com\entidade\TestaCon.class
 br\com\entidade\ManterUsuario.class
+br\com\bean\ServletLogin.class
+br\com\entidade\DAO.class
+br\com\entidade\TestaCon.class
 br\com\controle\Categoria.class
 br\com\entidade\ManterItem.class
-br\com\bean\ServletLogin.class
+br\com\bean\ServletItem.class
 br\com\bean\ServletUsuario.class
 br\com\bean\ServletTeste.class
+br\com\entidade\ManterCategoria.class
 br\com\controle\Usuario.class
-br\com\entidade\DAO.class
 br\com\controle\Item.class

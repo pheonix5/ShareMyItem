@@ -23,7 +23,7 @@ public class DAO {
     ResultSet rs;// criação do objeto que recebe resultados
     public void abrirBanco() throws SQLException {// criando metodo para acessar o banco
       try { 
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://localhost/myshare";// drive servidor e banco de dados a serem utilizados e indicação do banco a ser utilizado
         String user ="root";// usuario do banco de dados
         String senha ="";//senha do usuario do banco de dados    

@@ -39,7 +39,7 @@
 
           <label>
             <input type="password" placeholder="Senha" name="senha" required>
-            <div class="material-symbols-outlined">
+            <div  class="material-symbols-outlined">
               password
             </div>
           </label>
