@@ -11,73 +11,76 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="style/styleHome.css">
+        <link rel="stylesheet" href="style/styleMeusAnuncios.css">
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
     <body>
 
-<div class="div-geral">
-     <%@include file="Menu.jsp"%>
-</div>
+        <div class="div-geral">
+            <%@include file="Menu.jsp"%>
+        </div>
 
-    <div class="body">
-        <div class="content">
-            <div class="header">
-                <h1 class="h1">Meus Anúncios</h1>
-            </div>
-            <div class="painel">
-                <div class="anuncio">
-                    <div class="content-anuncio">
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>                            
+        <div class="body">
+            <div class="content">
+                <div class="header">
+                    <h1 class="h1">Meus Anúncios</h1>
+                    <a href="CadastraItem.jsp" class="btt-cadastra"><p>Anunciar Item</p></a>
+                </div>
+                <div class="painel">
+                    <div class="anuncio">
+                        <div class="content-anuncio">
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>                            
+                        </div>
+                    </div>
+                    <div class="anuncio">
+                        <div class="content-anuncio">
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>                            
+                        </div>                    </div>
+                    <div class="anuncio">
+                        <div class="content-anuncio">
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>                            
+                        </div>                    </div>
+                    <div class="anuncio">
+                        <div class="content-anuncio">
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>
+                            <p>
+                                Titulo XXXXXXXX
+                            </p>                            
+                        </div>                    
                     </div>
                 </div>
-                <div class="anuncio">
-                    <div class="content-anuncio">
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>                            
-                    </div>                    </div>
-                <div class="anuncio">
-                    <div class="content-anuncio">
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>                            
-                    </div>                    </div>
-                <div class="anuncio">
-                    <div class="content-anuncio">
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>
-                        <p>
-                            Titulo XXXXXXXX
-                        </p>                            
-                    </div>                    </div>
-
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

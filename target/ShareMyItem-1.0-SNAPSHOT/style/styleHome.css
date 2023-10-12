@@ -16,6 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 .div-geral{
 
 }
+
 .body{
     margin: 0;
     margin-left: 320px;
@@ -29,6 +30,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     align-items: center;
     justify-content: space-between;
 }
+.content{
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    min-height: calc(100vh - 115px);
+    padding: 24px;
+}
+
 .h1{
     font-weight: 500;
     font-size: 28px;
@@ -56,11 +64,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     margin: 10px;
     flex-direction: column;
     justify-content: space-between
-}
-.content{
-    border-radius: 5px;
-    background-color: #F5F5F5;
-    min-height: calc(100vh - 115px);
-    padding: 24px;
 }
 
