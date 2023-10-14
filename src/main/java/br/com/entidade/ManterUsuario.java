@@ -38,19 +38,37 @@ public class ManterUsuario extends DAO {
         this.abrirBanco();
         pst = con.prepareStatement(sql);
         pst.setString(1, email);
-        ResultSet rs = (ResultSet) pst.executeQuery();
+        ResultSet rst = (ResultSet) pst.executeQuery();
         Usuario u = new Usuario();
-        if (rs.next()) {
-            if (senha.equals(rs.getString("senha"))) {
-                u.setUsuario_id(rs.getInt("usuario_id"));
-                u.setNome(rs.getString("nome"));
-                u.setCpf(rs.getString("cpf"));
-                u.setTelefone(rs.getString("telefone"));
-                u.setEmail(rs.getString("email"));
+        if (rst.next()) {
+            if (senha.equals(rst.getString("senha"))) {
+                u.setUsuario_id(rst.getInt("usuario_id"));
+                u.setNome(rst.getString("nome"));
+                u.setCpf(rst.getString("cpf"));
+                u.setTelefone(rst.getString("telefone"));
+                u.setEmail(rst.getString("email"));
             }
         }
         this.fecharBanco();
         return u;
     }
 
+    public Usuario carregaPorId(int id_usuario) throws Exception {
+        String query = "SELECT * FROM usuario WHERE usuario_id = ?";
+        abrirBanco();
+        pst = (PreparedStatement) con.prepareStatement(query);
+        pst.setInt(1, id_usuario);
+        ResultSet rst = pst.executeQuery();
+        Usuario u = new Usuario();
+        if (rst.next()) {
+            u.setUsuario_id(rst.getInt("categoria_id"));
+            u.setNome(rst.getString("nome"));
+            u.setCpf(rst.getString("cpf"));
+            u.setTelefone(rst.getString("telefone"));
+            u.setEmail(rst.getString("email"));
+            u.setSenha(rst.getString("senha"));
+        }
+        fecharBanco();
+        return u;
+    }
 }

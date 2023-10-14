@@ -15,9 +15,9 @@ import java.sql.ResultSet;
 public class ManterCategoria extends DAO {
     
     public ArrayList<Categoria> listar() throws Exception{
-        String sql = "SELECT * FROM categoria";
+        String query = "SELECT * FROM categoria";
         abrirBanco();
-        PreparedStatement pstm = con.prepareStatement(sql);
+        PreparedStatement pstm = con.prepareStatement(query);
         ResultSet rst = pstm.executeQuery();
         ArrayList<Categoria> lista = new ArrayList<>();
         while (rst.next()){
@@ -29,5 +29,18 @@ public class ManterCategoria extends DAO {
         fecharBanco();
         return lista;
     }
-    
+    public Categoria carregaPorId(int id_categoria) throws Exception{
+        String query = "SELECT * FROM categoria WHERE categoria_id = ?";
+        abrirBanco();
+        pst = (PreparedStatement) con.prepareStatement(query);
+        pst.setInt(1, id_categoria);
+        ResultSet rst = pst.executeQuery();
+        Categoria c = new Categoria();
+        if(rst.next()){
+            c.setCategoria_id(rst.getInt("categoria_id"));
+            c.setNome(rst.getString("nome"));
+        }
+        fecharBanco();
+        return c;
+    }
 }

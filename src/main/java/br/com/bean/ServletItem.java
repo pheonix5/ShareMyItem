@@ -47,7 +47,7 @@ public class ServletItem extends HttpServlet {
                 String descricao = request.getParameter("descricao");
                 int cat_id = Integer.parseInt(request.getParameter("categoria_id"));
                 int sit = 0;
-                
+
                 Item i = new Item();
                 i.setNome(nome);
                 i.setDescricao(descricao);
@@ -57,12 +57,15 @@ public class ServletItem extends HttpServlet {
                 Categoria c = new Categoria();
                 c.setCategoria_id(cat_id);
                 i.setCategoria(c);
-                
+
                 //System.out.println( i.getSituacao() + "|" + u.getUsuario_id() + "|" + nome + "|" + descricao + "|" + cat_id);
-                
                 ManterItem m = new ManterItem();
                 m.inserir(i);
 
+                out.println("<script type='text/javascript'>");
+                out.println("alert('Sucesso ao Cadastrar!')");
+                out.println("</script>");
+                response.sendRedirect("MeusAnuncios.jsp");
             } catch (Exception e) {
                 out.println("<script type='text/javascript'>");
                 out.println("alert('Erro ao Cadastrar!')");

@@ -3,7 +3,9 @@
     Created on : 4 de out. de 2023, 23:50:13
     Author     : Eliakim
 --%>
-
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.com.controle.Item"%>
+<%@page import="br.com.entidade.ManterItem"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,60 +26,42 @@
         <div class="body">
             <div class="content">
                 <div class="header">
-                    <h1 class="h1">Meus Anúncios</h1>
-                    <a href="CadastraItem.jsp" class="btt-cadastra"><p>Anunciar Item</p></a>
+                    <h1 class="h1">Meus Itens</h1>
+                    <a href="CadastraItem.jsp" class="btt-cadastra"><p>Cadastrar Item</p></a>
                 </div>
                 <div class="painel">
                     <div class="anuncio">
+
+                        <% 
+                            
+                            ArrayList<Item> lista = new ArrayList<Item>();
+                            try{
+                                Usuario uLogado = new Usuario();    
+                                uLogado = (Usuario) session.getAttribute("usuario");
+                                ManterItem mi = new ManterItem();
+                                lista = mi.listar(uLogado.getUsuario_id());
+                            }catch(Exception e){
+                                out.print("Erro: " + e);
+                            }
+                            
+                            for(Item i: lista){
+                            
+                        %>
+
                         <div class="content-anuncio">
                             <p>
-                                Titulo XXXXXXXX
+                                <%=i.getNome()%>
                             </p>
                             <p>
-                                Titulo XXXXXXXX
+                                <%=i.getDescricao()%>
                             </p>
                             <p>
-                                Titulo XXXXXXXX
-                            </p>                            
+                                <%=i.getCategoria().getNome()%>
+                            </p>                           
                         </div>
-                    </div>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
-                        </div>                    </div>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
-                        </div>                    </div>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
-                        </div>                    
-                    </div>
+
+                        <%}%>
+                    </div>                    
                 </div>
             </div>
         </div>

@@ -6,13 +6,15 @@ package br.com.entidade;
 
 import br.com.controle.Item;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
  * @author lucas
  */
-public class ManterItem  extends DAO{
-    
+public class ManterItem extends DAO {
+
     public void inserir(Item i) throws Exception {
         try {
             abrirBanco();
@@ -29,5 +31,27 @@ public class ManterItem  extends DAO{
         } catch (Exception e) {
             System.out.println("Erro ao inserir: " + e.getMessage());
         }
+    }
+
+    public ArrayList<Item> listar() throws Exception {
+        abrirBanco();
+        String query = "SELECT * FROM item WHERE usuario_id = ?";
+        pst = (PreparedStatement) con.prepareStatement(query);
+        ResultSet rs = pst.executeQuery();
+        ArrayList<Item> lista = new ArrayList<>();
+        while (rs.next()) {
+            Item i = new Item();
+            i.setNome(rs.getString("nome"));
+            i.setDescricao(rs.getString("descricao"));
+            ManterCategoria mc = new ManterCategoria();
+            i.setCategoria(mc.carregaPorId(rs.getInt("id_categoria")));
+            i.setSituacao(rs.getInt("situacao"));
+            ManterUsuario mu = new ManterUsuario();
+            i.setUsuario(mu.carregaPorId(rs.getInt("id_usuario")));
+        
+            lista.add(i);
+        }
+        fecharBanco();
+        return lista;
     }
 }

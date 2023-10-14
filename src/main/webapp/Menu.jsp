@@ -45,7 +45,7 @@
                             forms_add_on
                         </span>
                         <a href="MeusAnuncios.jsp">
-                            Meus Anúncios
+                            Meus Itens
                         </a>
                     </div>
                 </li>
