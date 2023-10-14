@@ -61,7 +61,7 @@ public class ManterUsuario extends DAO {
         ResultSet rst = pst.executeQuery();
         Usuario u = new Usuario();
         if (rst.next()) {
-            u.setUsuario_id(rst.getInt("categoria_id"));
+            u.setUsuario_id(rst.getInt("usuario_id"));
             u.setNome(rst.getString("nome"));
             u.setCpf(rst.getString("cpf"));
             u.setTelefone(rst.getString("telefone"));

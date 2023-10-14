@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 public class DAO {
     Connection con;// criação do objeto conexao
     PreparedStatement pst;//criação do objeto preparação de ambiente
-    ResultSet rs;// criação do objeto que recebe resultados
     public void abrirBanco() throws SQLException {// criando metodo para acessar o banco
       try { 
         Class.forName("com.mysql.cj.jdbc.Driver");

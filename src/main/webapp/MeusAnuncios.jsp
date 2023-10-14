@@ -17,6 +17,13 @@
         <link rel="stylesheet" href="style/styleMeusAnuncios.css">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <script type="text/javascript">
+        function excluir(nome, item_id) {
+            if (confirm("Tem Certeza que Deseja Excluir: " + nome + "?")) {
+                window.open("excluirItem.do?item_id=" + item_id, "_self");
+            }
+        }
+    </script> 
     </head>
     <body>
 
@@ -31,23 +38,21 @@
                     <a href="CadastraItem.jsp" class="btt-cadastra"><p>Cadastrar Item</p></a>
                 </div>
                 <div class="painel">
+                    <% 
+                            
+                           ArrayList<Item> lista = new ArrayList<Item>();
+                           try{  
+                               Usuario u = (Usuario) session.getAttribute("usuario");
+                               ManterItem mi = new ManterItem();
+                               lista = mi.listar(u.getUsuario_id());
+                           }catch(Exception e){
+                               out.print("Erro: " + e);
+                           }
+                            
+                           for(Item i: lista){
+                            
+                    %>
                     <div class="anuncio">
-
-                        <% 
-                            
-                            ArrayList<Item> lista = new ArrayList<Item>();
-                            try{  
-                                Usuario u = (Usuario) session.getAttribute("usuario");
-                                ManterItem mi = new ManterItem();
-                                lista = mi.listar(u.getUsuario_id());
-                            }catch(Exception e){
-                                out.print("Erro: " + e);
-                            }
-                            
-                            for(Item i: lista){
-                            
-                        %>
-
                         <div class="content-anuncio">
                             <p>
                                 <%=i.getNome()%>
@@ -55,13 +60,23 @@
                             <p>
                                 <%=i.getDescricao()%>
                             </p>
+
                             <p>
                                 <%=i.getCategoria().getNome()%>
-                            </p>                           
-                        </div>
+                            </p>
 
-                        <%}%>
-                    </div>                    
+                        </div>
+                         <div class="content-button">
+                             
+                             <a href="form_editar_item.jsp?item_id=<%=i.getItem_id()%>">
+                                     Editar</a>
+                                     
+                             <a href="#" title="Excluir" onclick="onclick="excluir('<%=i.getNome()%>',<%=i.getItem_id()%>);
+                             ">Excluir</a>
+                       
+                         </div>
+                    </div>    
+                    <%}%>
                 </div>
             </div>
         </div>
