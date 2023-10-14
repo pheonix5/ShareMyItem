@@ -33,10 +33,11 @@ public class ManterItem extends DAO {
         }
     }
 
-    public ArrayList<Item> listar() throws Exception {
+    public ArrayList<Item> listar(int id_usuario) throws Exception {
         abrirBanco();
-        String query = "SELECT * FROM item WHERE usuario_id = ?";
+        String query = "SELECT * FROM item WHERE id_usuario = ?";
         pst = (PreparedStatement) con.prepareStatement(query);
+        pst.setInt(1, id_usuario);
         ResultSet rs = pst.executeQuery();
         ArrayList<Item> lista = new ArrayList<>();
         while (rs.next()) {

@@ -6,6 +6,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.controle.Item"%>
 <%@page import="br.com.entidade.ManterItem"%>
+<%@page import="br.com.controle.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,11 +36,10 @@
                         <% 
                             
                             ArrayList<Item> lista = new ArrayList<Item>();
-                            try{
-                                Usuario uLogado = new Usuario();    
-                                uLogado = (Usuario) session.getAttribute("usuario");
+                            try{  
+                                Usuario u = (Usuario) session.getAttribute("usuario");
                                 ManterItem mi = new ManterItem();
-                                lista = mi.listar(uLogado.getUsuario_id());
+                                lista = mi.listar(u.getUsuario_id());
                             }catch(Exception e){
                                 out.print("Erro: " + e);
                             }
