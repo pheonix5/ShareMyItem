@@ -8,16 +8,16 @@ import br.com.controle.Categoria;
 import br.com.controle.Item;
 import br.com.controle.Usuario;
 import br.com.entidade.ManterItem;
-import jakarta.servlet.RequestDispatcher;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -65,7 +65,7 @@ public class ServletItem extends HttpServlet {
                 out.println("<script type='text/javascript'>");
                 out.println("alert('Sucesso ao Cadastrar!')");
                 out.println("</script>");
-                response.sendRedirect("MeusAnuncios.jsp");
+                response.sendRedirect("MeusItens.jsp");
             } catch (Exception e) {
                 out.println("<script type='text/javascript'>");
                 out.println("alert('Erro ao Cadastrar!')");

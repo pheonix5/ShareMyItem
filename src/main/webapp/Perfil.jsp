@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="br.com.controle.Usuario"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,46 +27,49 @@
                     <h1 class="h1">Perfil</h1>
                 </div>
                 <div class="painel">
-                    <div class="content-input">
+                    <form action="AlterarPerfil.do" method="post">
+                        <div class="content-input">
+                            <input type="hidden" name="id" value=<%=uLogado.getUsuario_id()%> >
+                            <label>
+                                <input type="text" placeholder="Nome" value="<%=uLogado.getNome()%>" name="nome" required>
+                                <div class="material-symbols-outlined">
+                                    person
+                                </div>
+                            </label>
 
+                            <label>
+                                <input type="email" placeholder="E-mail"  value=<%=uLogado.getEmail()%> name="email" required>
+                                <div class="material-symbols-outlined">
+                                    mail
+                                </div>
+                            </label>
 
-                        <label>
-                            <input type="text" placeholder="Nome" name="nome" required>
-                            <div class="material-symbols-outlined">
-                                person
-                            </div>
-                        </label>
+                            <label>
+                               
+                                <input type="tel" placeholder="Telefone" value="<%=uLogado.getTelefone()%>" name="telefone" onkeypress="$(this).mask('(00) 00000-0000');"
+                                       required>
+                                <div class="material-symbols-outlined">
+                                    phone_iphone
+                                </div>
+                            </label>
 
-                        <label>
-                            <input type="email" placeholder="E-mail" name="email" required>
-                            <div class="material-symbols-outlined">
-                                mail
-                            </div>
-                        </label>
+                            <label>
+                                <input type="text" placeholder="CPF" value=<%=uLogado.getCpf()%> name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
+                                <div class="material-symbols-outlined">
+                                    123
+                                </div>
+                            </label>
 
-                        <label>
-                            <input type="text" placeholder="Telefone" name="telefone" onkeypress="$(this).mask('(00) 00000-0000')"
-                                   required>
-                            <div class="material-symbols-outlined">
-                                phone_iphone
-                            </div>
-                        </label>
+                            <label>
+                                <input type="text" placeholder="Senha" value=<%=uLogado.getSenha()%> name="senha" required>
+                                <div class="material-symbols-outlined">
+                                    password
+                                </div>
+                            </label>
 
-                        <label>
-                            <input type="text" placeholder="CPF" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
-                            <div class="material-symbols-outlined">
-                                123
-                            </div>
-                        </label>
-
-                        <label>
-                            <input type="password" placeholder="Senha" name="senha" required>
-                            <div class="material-symbols-outlined">
-                                password
-                            </div>
-                        </label>
-
-                    </div>
+                                <button type="submit" class="form-button">Salvar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -54,11 +54,6 @@
                             <label>
                                 <input type="text" placeholder="Descrição" name="descricao" value="<%=i.getDescricao()%>"required>
                             </label>
-                            
-                             <label>
-                                <input type="number" placeholder="Situação" name="situacao" value="<%=i.getSituacao()%>"required>
-                            </label>
-
 
                             <select class="categorias" name="categoria_id" required>
                                 <option value=<%=i.getCategoria().getCategoria_id()%> > <%=i.getCategoria().getNome()%> </option>
@@ -84,10 +79,10 @@
                     </form>                    
                 </div>
                 <div class="footer" id="footer-id">  
-                    <a href="MeusAnuncios.jsp"> <p>Cancelar </p></a>
+                    <a href="MeusItens.jsp"> <p>Cancelar </p></a>
                     <script>
                         document.getElementById('footer-id').addEventListener('click', function () {
-                            window.location.href = 'MeusAnuncios.jsp';
+                            window.location.href = 'MeusItens.jsp';
                         });
                     </script>
                 </div>  

@@ -24,7 +24,7 @@
         <div class="body">
             <div class="content">
                 <div class="header">
-                    <h1 class="h1">Anunciar Item</h1>                    
+                    <h1 class="h1">Cadastrar Item</h1>                    
                 </div>
                 <div class="painel">                    
                     <h2>Preencha os campos para anunciar o seu item</h2>
@@ -63,10 +63,10 @@
                     </form>                    
                 </div>
                 <div class="footer" id="footer-id">  
-                    <a href="MeusAnuncios.jsp"> <p>Cancelar </p></a>
+                    <a href="MeusItens.jsp"> <p>Cancelar </p></a>
                     <script>
                         document.getElementById('footer-id').addEventListener('click', function () {
-                            window.location.href = 'MeusAnuncios.jsp';
+                            window.location.href = 'MeusItens.jsp';
                         });
                     </script>
                 </div>  

@@ -47,6 +47,7 @@ public class ManterUsuario extends DAO {
                 u.setCpf(rst.getString("cpf"));
                 u.setTelefone(rst.getString("telefone"));
                 u.setEmail(rst.getString("email"));
+                u.setSenha(rst.getString("senha"));
             }
         }
         this.fecharBanco();
@@ -70,5 +71,27 @@ public class ManterUsuario extends DAO {
         }
         fecharBanco();
         return u;
+    }
+
+    public Boolean alteraUsuario(Usuario u) throws Exception {
+        try {
+            abrirBanco();
+            String query = "UPDATE usuario SET nome=?, cpf=?, telefone=?, email=?, senha=? WHERE usuario_id=?";
+            
+            pst = (PreparedStatement) con.prepareStatement(query);
+            pst.setString(1, u.getNome());
+            pst.setString(2, u.getCpf());
+            pst.setString(3, u.getTelefone());
+            pst.setString(4, u.getEmail());
+            pst.setString(5, u.getSenha());
+            pst.setInt(6, u.getUsuario_id());
+            pst.execute();
+            fecharBanco();
+            
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar usuario: " + e.getMessage());
+            return false;
+        }
+        return true;
     }
 }

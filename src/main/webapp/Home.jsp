@@ -4,6 +4,9 @@
     Author     : Eliakim
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.com.controle.Item"%>
+<%@page import="br.com.entidade.ManterItem"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +19,7 @@
     <body>
         <div class="div-geral">
             <div class="menu-lateral">
-                 <%@include file="Menu.jsp"%>
+                <%@include file="Menu.jsp"%>
             </div> 
         </div>
 
@@ -26,56 +29,37 @@
                     <h1 class="h1">Anúncios</h1>
                 </div>
                 <div class="painel">
+                    <%             
+                        ArrayList<Item> lista = new ArrayList<Item>();
+                        try {
+                            ManterItem m = new ManterItem();
+                            lista = m.listaDisponivel();
+
+                        } catch (Exception e) {
+                            System.out.println("Erro ao lista items: " + e.getMessage());
+                        }
+                        
+                        
+                        if(lista.isEmpty()){
+                        %>    
+                        <p>Nenhum item disponivel</p>
+                        <%
+                         }
+
+                        for (Item i : lista) {
+                    %>  
                     <div class="anuncio">
                         <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
+                            <p>Item: <%=i.getNome()%></p>
+                            <p>Descrição: <%=i.getDescricao()%></p>
+                            <p>Dono: <%=i.getUsuario().getNome()%></p>
+                            <p>Categoria: <%=i.getCategoria().getNome()%></p>
                         </div>
                     </div>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
-                        </div>                    </div>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
-                        </div>                    </div>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>
-                            <p>
-                                Titulo XXXXXXXX
-                            </p>                            
-                        </div>                    </div>
 
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>

@@ -8,14 +8,14 @@ import br.com.controle.Categoria;
 import br.com.controle.Item;
 import br.com.controle.Usuario;
 import br.com.entidade.ManterItem;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 
 /**
  *
@@ -37,36 +37,37 @@ public class ServeletAlterarItem extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             HttpSession session = request.getSession();
+            HttpSession session = request.getSession();
             try {
                 Usuario u = (Usuario) session.getAttribute("usuario");
+                int item_id = Integer.parseInt(request.getParameter("item_id"));
                 String nome = request.getParameter("nome");
                 String descricao = request.getParameter("descricao");
-                int sit = Integer.parseInt(request.getParameter("situacao"));
                 int cat_id = Integer.parseInt(request.getParameter("categoria_id"));
-                
 
                 Item i = new Item();
+                i.setItem_id(item_id);
                 i.setNome(nome);
                 i.setDescricao(descricao);
-                i.setSituacao(sit);
                 i.setUsuario(u);
 
                 Categoria c = new Categoria();
                 c.setCategoria_id(cat_id);
                 i.setCategoria(c);
 
-                System.out.println( i.getSituacao() + "|" + u.getUsuario_id() + "|" + nome + "|" + descricao + "|" + cat_id);
+                //System.out.println( i.getSituacao() + "|" + u.getUsuario_id() + "|" + nome + "|" + descricao + "|" + cat_id);;
                 ManterItem mi = new ManterItem();
                 mi.alterar(i);
 
                 out.println("<script type='text/javascript'>");
-                out.println("alert('Sucesso ao Atualizar Dados!')");
+                out.println("alert('Sucesso ao Atualizar Dados!');");
+                out.println("window.location.href = 'MeusItens.jsp';");
                 out.println("</script>");
-                response.sendRedirect("MeusAnuncios.jsp");
+
             } catch (Exception e) {
                 out.println("<script type='text/javascript'>");
                 out.println("alert('Erro ao Atualizar!')");
+                out.println("window.location.replace('form_editar_item.jsp');");
                 out.println("</script>");
                 System.out.println("Erro " + e);
             }

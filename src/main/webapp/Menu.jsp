@@ -44,14 +44,14 @@
                         <span class="material-symbols-outlined">
                             forms_add_on
                         </span>
-                        <a href="MeusAnuncios.jsp">
+                        <a href="MeusItens.jsp">
                             Meus Itens
                         </a>
                     </div>
                 </li>
                 <script>
                     document.getElementById('meus-anuncios-li').addEventListener('click', function () {
-                        window.location.href = 'MeusAnuncios.jsp';
+                        window.location.href = 'MeusItens.jsp';
                     });
                 </script>
                 <li class="li-menu" id="perfil-li">
@@ -72,7 +72,7 @@
                         <span class="material-symbols-outlined">
                             logout
                         </span>
-                        <a href="sair.jsp?usuario=usuario">Sair</a>
+                        <a href="sair.jsp?usuario=usuario"><%=uLogado.getNome()%>,  Sair</a>
                     </div>
                 </li>
                 <script>

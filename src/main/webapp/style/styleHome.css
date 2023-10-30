@@ -14,7 +14,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 }
 .div-geral{
-
+   display: flex;
+   flex: 1;
 }
 
 .body{
@@ -66,3 +67,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     justify-content: space-between
 }
 
+.form-button{
+  padding: 7px 0px;
+  background-color: #002C6F;
+  color: #FFF;
+  font-size: 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-button:hover{
+  transform: scale(1.02);
+}
