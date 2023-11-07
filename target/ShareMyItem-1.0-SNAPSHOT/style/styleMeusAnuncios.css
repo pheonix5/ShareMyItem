@@ -9,9 +9,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif ;
 
 }
+.header{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.header a{
+    display: flex;
+    align-self: end;
+}
+.header h1{
+    display: flex;
+    align-self: start;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .btt-cadastra{
     background: #002C6F;
     color: white;
@@ -23,7 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     justify-content: center;
     align-items: center;
     text-decoration: none;
-
+    padding: 0.2rem 0.2rem;
 }
 .btt-cadastra p {
     margin: 0px 10px;
@@ -32,4 +50,168 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 .btt-cadastra:hover{
     background: #003d6b;
 
+}
+
+.btt-anunciar{
+    background: #002C6F;
+    color: white;
+    border-radius: 20px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.btt-editar{
+    background: #6c6e7f;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    height: 40px;
+    width: 40px;
+}
+
+.btt-excluir{
+    background: #fd0000c9;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem;
+    height: 40px;
+    width: 40px;
+}
+.actions{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    border-bottom-right-radius: 5px;
+    border-top:1px solid #ccc !important;
+    border-right: 1px solid #ccc !important;
+    border-bottom:1px solid #ccc !important;
+    border-left: 0px solid #ccc !important;
+}
+.cat-body,.desc-body{
+    border-top:1px solid #ccc !important;
+    border-right: 1px solid #ccc !important;
+    border-bottom:1px solid #ccc !important;
+    border-left: 0px solid #ccc !important;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.table th, .table td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.nome-body{
+    border-bottom-left-radius: 5px;
+    border-top:1px solid #ccc !important;
+    border-right: 1px solid #ccc !important;
+    border-bottom:1px solid #ccc !important;
+    border-left: 1px solid #ccc !important;
+
+}
+
+.painel td {
+    padding-bottom: 10px;
+}
+tbody{
+    width: 100%
+}
+
+.painel-body{
+    margin-bottom: 8px;
+    display: flex;
+    width: 100%;
+}
+.painel-header{
+    width: 100%;
+    display: flex;
+}
+.tabela-itens th, .tabela-itens td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.tabela-itens th {
+    background-color: #f2f2f2;
+}
+.tr-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #002C6F;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+tr-header span{
+    border: 1px solid #ccc;
+    padding: 8px;
+
+}
+/* Adicione ao seu arquivo de estilo CSS */
+
+.toggle-button {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0;
+  transition: 0.3s;
+}
+
+.toggle-button:checked + .toggle-label {
+  background-color: #2196F3;
+}
+
+.toggle-button:checked + .toggle-label:before {
+  transform: translateX(30px);
 }

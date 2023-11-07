@@ -41,3 +41,37 @@ body {
 .menu li a:hover {
     background-color: #555;
 }
+/* Adicione ao seu arquivo de estilo CSS */
+
+.toggle-button {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0;
+  transition: 0.3s;
+}
+
+.toggle-button:checked + .toggle-label {
+  background-color: #2196F3;
+}
+
+.toggle-button:checked + .toggle-label:before {
+  transform: translateX(30px);
+}

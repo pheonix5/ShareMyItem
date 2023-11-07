@@ -66,9 +66,14 @@
                     <h1 class="h1">Meus Itens</h1>
                     <a href="CadastraItem.jsp" class="btt-cadastra"><p>Cadastrar Item</p></a>
                 </div>
-                <div class="painel">
-                    <%                    
-                        ArrayList<Item> lista = new ArrayList<Item>();
+                <div class="tr-header">
+                    <p>Nome</p>
+                    <p>Descrição</p>
+                    <p>Categoria</p>
+                    <p>Ações</p>
+                </div>
+                <table class="table">
+                    <%                        ArrayList<Item> lista = new ArrayList<Item>();
                         try {
                             Usuario u = (Usuario) session.getAttribute("usuario");
                             ManterItem mi = new ManterItem();
@@ -80,28 +85,23 @@
                         for (Item i : lista) {
 
                     %>
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>
-                                <%=i.getNome()%>
-                            </p>
-                            <p>
-                                <%=i.getDescricao()%>
-                            </p>
 
-                            <p>
-                                <%=i.getCategoria().getNome()%>
-                            </p>
 
-                        </div>
-                        <div class="content-button">
-
-                            <a href="form_editar_item.jsp?item_id=<%=i.getItem_id()%>">
-                                Editar</a>
-                            <br>       
-                            <a href="#" title="Excluir" onclick="excluir('<%=i.getNome()%>',<%=i.getItem_id()%>);
-                               ">Excluir</a>
-                            <br>  
+                    <tr class="painel-body">
+                        <td class="nome-body"><%=i.getNome()%></td>
+                        <td class="desc-body"><%=i.getDescricao()%></td>
+                        <td class="cat-body"><%=i.getCategoria().getNome()%></td>
+                        <td class="actions">
+                            <button class="btt-editar" onclick="window.location.href = 'form_editar_item.jsp?item_id=<%=i.getItem_id()%>'">
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </button>
+                            <button class="btt-excluir" title="Excluir" onclick="excluir('<%=i.getNome()%>',<%=i.getItem_id()%>);">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </button>
                             <%
                                 int situacao = i.getSituacao();
                                 String status;
@@ -116,11 +116,20 @@
                                     status = "Desconhecido";
                                 }
                             %>
-                            <a href="#" title=""onclick="decidirAcao('<%=i.getNome()%>', <%=i.getItem_id()%>, <%=i.getSituacao()%>);"><%=status%></a>
-                        </div>
-                    </div>    
-                    <%}%>
-                </div>
+                            <a href="#" title=""onclick="decidirAcao('<%=i.getNome()%>', <%=i.getItem_id()%>, <%=i.getSituacao()%>);"><%=status%></a>       
+                            <!--                            <div class="toggle-container">
+                                                            <input type="checkbox" id="toggleButton<%=i.getItem_id()%>" class="toggle-button visually-hidden" 
+                                                                data-item-id="<%=i.getItem_id()%>" onchange="toggleAcao(this);">
+                                                            <label for="toggleButton<%=i.getItem_id()%>" class="toggle-label"></label>
+                                                        </div>-->
+                        </td>
+                    </tr>
+
+                    <%
+                        }
+                    %>
+                </table>
+
             </div>
         </div>
     </div>
