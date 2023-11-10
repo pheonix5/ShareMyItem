@@ -21,45 +21,45 @@
             <div class="menu-lateral">
                 <%@include file="Menu.jsp"%>
             </div> 
-        </div>
 
-        <div class="body">
-            <div class="content">
-                <div class="header">
-                    <h1 class="h1">Anúncios</h1>
-                </div>
-                <div class="painel">
-                    <%             
-                        ArrayList<Item> lista = new ArrayList<Item>();
-                        try {
-                            ManterItem m = new ManterItem();
-                            lista = m.listaDisponivel();
 
-                        } catch (Exception e) {
-                            System.out.println("Erro ao lista items: " + e.getMessage());
-                        }
-                        
-                        
-                        if(lista.isEmpty()){
+            <div class="body">
+                <div class="content">
+                    <div class="header">
+                        <h1 class="h1">Anúncios</h1>
+                    </div>
+                    <div class="painel">
+                        <%   
+                            ArrayList<Item> lista = new ArrayList<Item>();
+                            try {
+                                ManterItem m = new ManterItem();
+                                lista = m.listaDisponivel();
+
+                            } catch (Exception e) {
+                                System.out.println("Erro ao lista items: " + e.getMessage());
+                            }
+
+                            if (lista.isEmpty()) {
                         %>    
                         <p>Nenhum item disponivel</p>
                         <%
-                         }
+                            }
 
-                        for (Item i : lista) {
-                    %>  
-                    <div class="anuncio">
-                        <div class="content-anuncio">
-                            <p>Item: <%=i.getNome()%></p>
-                            <p>Descrição: <%=i.getDescricao()%></p>
-                            <p>Dono: <%=i.getUsuario().getNome()%></p>
-                            <p>Categoria: <%=i.getCategoria().getNome()%></p>
+                            for (Item i : lista) {
+                        %>  
+                        <div class="anuncio">
+                            <div class="content-anuncio">
+                                <p>Item: <%=i.getNome()%></p>
+                                <p>Descrição: <%=i.getDescricao()%></p>
+                                <p>Dono: <%=i.getUsuario().getNome()%></p>
+                                <p>Categoria: <%=i.getCategoria().getNome()%></p>
+                            </div>
                         </div>
-                    </div>
 
-                    <%
-                        }
-                    %>
+                        <%
+                            }
+                        %>
+                    </div>
                 </div>
             </div>
         </div>

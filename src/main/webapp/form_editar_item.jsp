@@ -46,6 +46,9 @@
                     <form action="alterarItem.do" method="post" class="form">
 
                         <div class="content-input">
+                            <div>
+                                <img src="<%=i.getImagem()%>" width="130px" height="110px" >
+                            </div>
                             <input type="hidden" name="item_id" value="<%=i.getItem_id()%>">
                             <label>
                                 <input type="text" placeholder="Nome" name="nome" value="<%=i.getNome()%>" required>

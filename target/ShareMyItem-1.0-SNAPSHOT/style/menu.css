@@ -8,10 +8,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 */
 
 .menu {
-    width: 320px;
+    width: 280px;
     background-color: #002C6F;
     height: 100%;
-    position: fixed;
     
 }
 .menu a{
@@ -42,6 +41,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     a{
         color: #002C6F !important;
     }
+}
+
+.li-menu{
+    padding-left: 10px;
+}
+
+.logo-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.logo{
+    max-width: 200px;
+    width: 100%;
 }
 
 #anuncios-li:hover {

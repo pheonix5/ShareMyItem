@@ -74,10 +74,29 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    margin-right: 1rem;
     padding: 0.5rem;
     height: 40px;
     width: 40px;
+}
+
+#btn-actions{
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #002C6F;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn-actions:hover{
+    opacity: 0.8;
+    transform:  scale(1.1);
+}
+
+#btn-actions p{
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF
 }
 
 .btt-excluir{
@@ -98,8 +117,8 @@ body {
     display: flex;
     flex-direction: row;
     align-content: center;
-    justify-content: center;
     border-bottom-right-radius: 5px;
+    gap: 10px;
     border-top:1px solid #ccc !important;
     border-right: 1px solid #ccc !important;
     border-bottom:1px solid #ccc !important;
@@ -114,12 +133,10 @@ body {
 .table {
     width: 100%;
     border-collapse: collapse;
-    max-height: calc(100vh - 260px);
     overflow-y: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-height: 100%;
 }
 
 .table th, .table td {
@@ -182,6 +199,7 @@ tr-header span{
 
 }
 /* Adicione ao seu arquivo de estilo CSS */
+/*ChatGPT*/
 
 .toggle-button {
   display: none;

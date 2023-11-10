@@ -11,9 +11,18 @@ package br.com.controle;
 public class Item {
     private int item_id;
     private String nome,descricao;
-    int situacao;
+    private int situacao;
     Usuario usuario;
     Categoria categoria;
+    private String imagem;
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
 
     public int getItem_id() {
         return item_id;

@@ -22,7 +22,10 @@
     </head>
     <body>
         <div class="menu">
-            <img src="image/logo2.png" />
+            <div class="logo-box">
+               <img class="logo" src="image/logo2.png" />
+            </div>
+            
             <ul>
                 <li class="li-menu" id="anuncios-li">
                     <div>
